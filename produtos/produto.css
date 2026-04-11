@@ -1,0 +1,150 @@
+/* Layout da Grade de Produtos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 80px 5%;
+}
+
+/* Configuração do Card (Flip Effect) */
+.card-container {
+    perspective: 1000px; /* Necessário para o efeito 3D */
+    height: 480px;
+}
+
+.product-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Classe que será adicionada pelo JS */
+.product-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde a parte de trás enquanto gira */
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* Estilo do Verso */
+.card-back {
+    background: var(--bg-gray);
+    transform: rotateY(180deg);
+    border: 2px solid var(--primary);
+    text-align: left;
+    align-items: flex-start;
+}
+
+.card-back h3 { color: var(--dark-green); margin-bottom: 20px; }
+
+.card-back ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.card-back ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Conteúdo da Frente */
+/* Ajuste na face do card para não espalhar tanto os itens */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Alterado de space-between para flex-start para controlar manualmente */
+    justify-content: flex-start; 
+    text-align: center;
+}
+
+/* Reduzindo a altura do container da imagem e a margem inferior */
+.product-img {
+    width: 100%;
+    height: 180px; /* Reduzi de 200px para 180px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px; /* Reduzi drasticamente a margem para colar no título */
+    margin-bottom: 25px;
+}
+
+/* Garante que o título não tenha margem superior extra */
+.product-basic-info h3 {
+    color: var(--dark-green);
+    font-size: 1.4rem;
+    margin-top: 0; 
+    margin-bottom: 10px;
+}
+
+/* Adiciona um espaço automático apenas antes do botão para empurrá-lo para o fim do card */
+.product-basic-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.product-basic-info .btn-flip {
+    margin-top: 50px; /* Empurra o botão para a base do card de forma limpa */
+}
+
+/* Botões de Flip */
+.btn-flip {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.btn-flip:hover {
+    background: var(--dark-green);
+    transform: scale(1.05);
+}
+
+.btn-flip.back {
+    background: var(--text-dark);
+    margin: 0;
+}
+
+.none{
+    background-color: #7dba00;;
+    margin-top: 40px;
+    margin-bottom: 150px;
+}

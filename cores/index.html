@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapon | Soluções em Fechamentos Industriais</title>
+    <link rel="stylesheet" href="/produtos/padrao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/produtos/produto.css">
+</head>
+<body>
+<header id="header">
+    <nav class="navbar">
+        <div class="logo">TAPON<span>.</span></div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/index.html" >Home</a></li>
+            <li><a href="/produtos/index.html" class="active">Produtos</a></li>
+            <li><a href="/cores/index.html">Cores</a></li>
+            <li><a href="qualidade.html">Qualidade</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <link rel="stylesheet" href="/cores/cores.css">
+        </ul>
+
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<section class="none"></section>
+<main>
+
+    <section class="configurator container scroll-anim">
+        <div class="config-visual">
+            <div class="tampa-stage">
+                <img src="https://i.postimg.cc/dVp5styn/Tampa-Verm-Borracha.png" 
+                     alt="Tampa Tapon" 
+                     id="mainTampa" 
+                     class="tampa-img-fluid">
+                <div class="shadow"></div>
+            </div>
+        </div>
+        
+        <div class="config-info">
+            <span class="category">Modelo Atual</span>
+            <h2>Tampa Baixa 28mm <br>com Vedante</h2>
+            <p>Solução *low profile* ideal para o fechamento de garrafas PET. O vedante integrado garante barreira hermética para gases e líquidos.</p>
+            <div class="tech-specs">
+                <span><i class="fas fa-arrows-alt-v"></i> 28mm</span>
+                <span><i class="fas fa-shield-alt"></i> Vedante Integrado</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="color-palette container scroll-anim">
+        <h3>Selecione uma cor para visualizar</h3>
+        
+        <div class="palette-grid">
+            <div class="color-dot" style="background-color: #f6f7f2;" title="Branco" onclick="trocarFoto('https://i.postimg.cc/9rw0cBqL/1.jpg', 'Branco')"></div>
+            <div class="color-dot" style="background-color: #fcc107;" title="Amarelo" onclick="trocarFoto('https://i.postimg.cc/F7kzhxL4/2.jpg', 'Amarelo')"></div>
+            <div class="color-dot" style="background-color: #ff7f27;" title="Laranja" onclick="trocarFoto('https://i.postimg.cc/v4RBT6r1/3.jpg', 'Laranja')"></div>
+            
+            <div class="color-dot active" style="background-color: #c0392b;" title="Vermelho" onclick="trocarFoto('https://i.postimg.cc/dVp5styn/Tampa-Verm-Borracha.png', 'Vermelho')"></div>
+            
+            <div class="color-dot" style="background-color: #2980b9;" title="Azul Claro" onclick="trocarFoto('https://i.postimg.cc/kVqgF3Yj/4.jpg', 'Azul Claro')"></div>
+            <div class="color-dot" style="background-color: #1a1c1e;" title="Azul Escuro" onclick="trocarFoto('https://i.postimg.cc/1nzR20QG/5.jpg', 'Azul Escuro')"></div>
+            <div class="color-dot" style="background-color: #62cf50;" title="Verde Claro" onclick="trocarFoto('https://i.postimg.cc/zbfD6wrj/6.jpg', 'Verde Claro')"></div>
+            <div class="color-dot" style="background-color: #04774e;" title="Verde Escuro" onclick="trocarFoto('https://i.postimg.cc/YLh9G6DS/9.jpg', 'Verde Escuro')"></div>
+            <div class="color-dot" style="background-color: #6a1b9a;" title="Lilás" onclick="trocarFoto('https://i.postimg.cc/JHGnDNYr/8.jpg', 'Lilás')"></div>
+            <div class="color-dot" style="background-color: #6e6e6e;" title="Prata" onclick="trocarFoto('https://i.postimg.cc/mzdkgXwm/11.jpg', 'Prata')"></div>
+            <div class="color-dot" style="background-color: #7b6238;" title="Ouro" onclick="trocarFoto('https://i.postimg.cc/vDBDNy8Q/12.jpg', 'Ouro')"></div>
+            <div class="color-dot" style="background-color: #000000;" title="Preto" onclick="trocarFoto('https://i.postimg.cc/R0jfJWST/7.jpg', 'Preto')"></div>
+        </div>
+        
+        <p class="color-name-display">Cor selecionada: <strong id="nomeCor">Vermelho</strong></p>
+    </section>
+</main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo white">TAPON<span>.</span></div>
+                    <p>Soluções inteligentes em tampas plásticas para diversos segmentos industriais.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="produtos.html">Nossos Produtos</a></li>
+                        <li><a href="cores.html">Catálogo de Cores</a></li>
+                        <li><a href="contato.html">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (XX) XXXX-XXXX</p>
+                    <p><i class="fas fa-envelope"></i> comercial@tapon.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Distrito Industrial - Brasil</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tapon. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="/cores/funcao.js"></script>
+
+    <script src="/script.js"></script>
+    
+</body>
+</html>

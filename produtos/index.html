@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapon | Soluções em Fechamentos Industriais</title>
+    <link rel="stylesheet" href="/produtos/padrao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/produtos/produto.css">
+</head>
+<body>
+<header id="header">
+    <nav class="navbar">
+        <div class="logo">TAPON<span>.</span></div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/index.html" >Home</a></li>
+            <li><a href="/produtos/index.html" class="active">Produtos</a></li>
+            <li><a href="cores.html">Cores</a></li>
+            <li><a href="qualidade.html">Qualidade</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<section class="none"></section>
+<main>
+    <section class="page-header">
+        <div class="container">
+            <h1>Nossa Linha de Produtos</h1>
+            <p>Excelência em fechamentos para o mercado industrial.</p>
+        </div>
+    </section>
+
+    <section class="products-grid container">
+        <div class="card-container scroll-anim">
+            <div class="product-card" id="card1">
+                <div class="card-face card-front">
+                    <div class="product-img">
+                        <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa 36mm">
+                    </div>
+                    <div class="product-basic-info">
+                        <h3>TAMPA BAIXA SEM VEDANTE 28MM.</h3>
+                        <p>O padrão ideal para vedação de tintas e vernizes.</p>
+                        <button class="btn-flip" onclick="flipCard('card1')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <h3>Especificações Técnicas</h3>
+                    <ul>
+                        <li><strong>Material:</strong> Polipropileno (PP)</li>
+                        <li><strong>Diâmetro:</strong> 36mm</li>
+                        <li><strong>Vedação:</strong> Hermética com batedor</li>
+                        <li><strong>Aplicação:</strong> Latas metálicas e plásticas</li>
+                    </ul>
+                    <p>Garantia de torque e segurança no transporte.</p>
+                    <button class="btn-flip back" onclick="flipCard('card1')">Voltar <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container scroll-anim">
+            <div class="product-card" id="card2">
+                <div class="card-face card-front">
+                    <div class="product-img">
+                        <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa com Lacre" style="filter: hue-rotate(90deg);">
+                    </div>
+                    <div class="product-basic-info">
+                        <h3>TTAMPA BAIXA COM VEDANTE 28MM</h3>
+                        <p>Segurança total contra violação do seu produto.</p>
+                        <button class="btn-flip" onclick="flipCard('card2')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <h3>Segurança Reforçada</h3>
+                    <ul>
+                        <li><strong>Lacre:</strong> Sistema de anel rompível</li>
+                        <li><strong>Cores:</strong> Personalização via sistema tintométrico</li>
+                        <li><strong>Resistência:</strong> Alta resistência a solventes</li>
+                    </ul>
+                    <button class="btn-flip back" onclick="flipCard('card2')">Voltar <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card-container scroll-anim">
+            <div class="product-card" id="card3">
+                <div class="card-face card-front">
+                    <div class="product-img">
+                        <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
+                    </div>
+                    <div class="product-basic-info">
+                        <h3>TAMPA BAIXA SEM VEDANTE 28MM REFORÇADA.</h3>
+                        <p>Acabamento superior para marcas de alto valor.</p>
+                        <button class="btn-flip" onclick="flipCard('card3')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <h3>Acabamento Premium</h3>
+                    <ul>
+                        <li><strong>Estética:</strong> Brilho intenso e sem rebarbas</li>
+                        <li><strong>Precisão:</strong> Testada em laboratório próprio</li>
+                        <li><strong>Volume:</strong> Pronta entrega para grandes lotes</li>
+                    </ul>
+                    <button class="btn-flip back" onclick="flipCard('card3')">Voltar <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+        </div>
+
+          <div class="card-container scroll-anim">
+            <div class="product-card" id="card4">
+                <div class="card-face card-front">
+                    <div class="product-img">
+                        <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
+                    </div>
+                    <div class="product-basic-info">
+                        <h3>TAMPA COM BATOQUE PARA ÁGUA SANITÁRIA</h3>
+                        <p>Acabamento superior para marcas de alto valor.</p>
+                        <button class="btn-flip" onclick="flipCard('card4')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <h3>Acabamento Premium</h3>
+                    <ul>
+                        <li><strong>Estética:</strong> Brilho intenso e sem rebarbas</li>
+                        <li><strong>Precisão:</strong> Testada em laboratório próprio</li>
+                        <li><strong>Volume:</strong> Pronta entrega para grandes lotes</li>
+                    </ul>
+                    <button class="btn-flip back" onclick="flipCard('card4')">Voltar <i class="fas fa-arrow-left"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo white">TAPON<span>.</span></div>
+                    <p>Soluções inteligentes em tampas plásticas para diversos segmentos industriais.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="produtos.html">Nossos Produtos</a></li>
+                        <li><a href="cores.html">Catálogo de Cores</a></li>
+                        <li><a href="contato.html">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (XX) XXXX-XXXX</p>
+                    <p><i class="fas fa-envelope"></i> comercial@tapon.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Distrito Industrial - Brasil</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tapon. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="/produtos/ANIMACAO.JS"></script>
+
+    <script src="/script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+/* --- CONFIGURADOR DE PRODUTO (REVISADO PARA CROSS-FADE) --- */
+.configurator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 100px 5%;
+    align-items: center;
+}
+
+.config-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tampa-stage {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo comum para ambas as imagens sobrepostas */
+.tampa-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+}
+
+/* Imagem de base (sempre visível, mas no fundo) */
+.tampa-img.base {
+    z-index: 5;
+    opacity: 1; /* Mantemos sempre visível para não quebrar o cross-fade */
+}
+
+/* Imagem ativa (a que faz a transição de opacidade) */
+.tampa-img.active {
+    z-index: 10; /* Fica por cima da base */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease-in-out; /* Transição flúida */
+}
+
+/* Classe que será adicionada pelo JS após a troca de imagem para engatilhar o fade-in */
+.tampa-img.active.show {
+    opacity: 1;
+}
+
+.tampa-stage .shadow {
+    position: absolute;
+    bottom: 5px; left: 50%;
+    width: 80%; height: 20px;
+    background: radial-gradient(circle, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%);
+    transform: translateX(-50%);
+    z-index: 1; /* Abaixo das imagens */
+}
+
+/* CONFIG INFO (Mantido o anterior) */
+.config-info .category { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
+.config-info h2 { font-size: 2.5rem; color: var(--dark-green); margin: 10px 0 20px; line-height: 1.2; }
+.config-info p { color: var(--text-light); margin-bottom: 30px; }
+.tech-specs { display: flex; gap: 20px; color: var(--text-dark); }
+.tech-specs span { font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.tech-specs i { color: var(--primary); }
+
+/* PALETA DE CORES (Mantido o anterior) */
+.color-palette { padding-bottom: 100px; text-align: center; }
+.color-palette h3 { color: var(--text-dark); margin-bottom: 40px; }
+.palette-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; max-width: 600px; margin: 0 auto; }
+.color-dot { width: 70px; height: 70px; border-radius: 50%; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, border-color 0.3s ease; border: 3px solid transparent; margin: 0 auto; }
+.color-dot:hover { transform: translateY(-5px); }
+.color-dot.active { border-color: var(--primary); transform: scale(1.1); }
+.color-name-display { margin-top: 30px; font-size: 1.1rem; color: var(--text-dark); }
+
+/* Responsividade */
+@media (max-width: 968px) {
+    .configurator { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+    .tampa-stage { width: 250px; height: 250px; }
+    .config-info h2 { font-size: 2rem; }
+    .palette-grid { grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .color-dot { width: 60px; height: 60px; }
+}
+
+.tampa-img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease;
+    opacity: 1;
+}
+
+/* Classe auxiliar para o efeito de fade no JS */
+.tampa-img-fluid.changing {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.color-dot.active {
+    border: 3px solid var(--primary);
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(125, 186, 0, 0.4);
+}
