@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #0ea322; 
-    --accent-color: #00ff40;
+    --primary-color: #7dba00;
+    --accent-color: #567a0e;
     --text-dark: #2d3436;
     --text-light: #636e72;
     --bg-light: #f9f9f9;
@@ -41,7 +41,7 @@
     left: 50%;
     width: 2px;
     height: 100%;
-    background: #dfe6e9;
+    background: #e1e9df;
     transform: translateX(-50%);
 }
 
@@ -63,7 +63,7 @@
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    box-shadow: 0 0 0 4px rgba(106, 27, 154, 0.2);
+    box-shadow: 0 0 0 4px rgba(42, 255, 53, 0.2);
 }
 
 .timeline-content {
