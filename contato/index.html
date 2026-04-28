@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapon | Soluções em Fechamentos Industriais</title>
+    <link rel="stylesheet" href="/produtos/padrao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/produtos/produto.css">
+    <link rel="stylesheet" href="/contato/contato.css">
+</head>
+<body>
+<header id="header">
+    <nav class="navbar">
+       <div class="logo">
+  <img src="
+  https://i.postimg.cc/phhW7sW-z/Marca-Tapon.png
+  " alt="Logo Tapon">
+  <style>
+   
+
+.logo {
+  height: 60px; /* altura do header */
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 70%; /* proporcional ao header */
+}
+
+
+
+
+
+  </style>
+</div>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/index.html" >Home</a></li>
+           <li><a href="/A-Tapon/index.html">A Tapon</a></li>
+            <li><a href="/produtos/index.html" >Produtos</a></li>
+            <li><a href="/qualidade/index.html">Qualidade</a></li>
+            <li><a href="/contato/index.html" class="active">Contato</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+
+
+
+<main class="contato-container">
+    <section class="contato-hero">
+        <div class="hero-overlay">
+            <h1>Entre em Contato</h1>
+        </div>
+    </section>
+
+    <div class="container content-wrapper">
+        <section class="form-section">
+            <div class="form-box">
+                <h2>Envie uma mensagem</h2>
+                <p>Preencha os dados abaixo e nossa equipe entrará em contato em breve.</p>
+                
+<form id="form-contato-sheets">
+    <div class="input-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="name" required>
+    </div>
+
+    <div class="input-row">
+        <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+        </div>
+        <div class="input-group">
+            <label for="telefone-contato">Telefone</label>
+            <input type="text" id="telefone-contato" name="telefone" placeholder="(00) 00000-0000" autocomplete="tel" required>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label for="mensagem">Como podemos ajudar?</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+    </div>
+
+    <button type="submit" id="btn-enviar-sheets">
+        <span>Envie sua mensagem</span>
+    </button>
+</form>
+<div id="toast-container" class="toast-container"></div>
+<style>
+    /* Estilo do Alerta Personalizado */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    background: #fff;
+    color: #333;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25); /* Sombra roxa suave */
+    border-left: 5px solid #6c5ce7; /* Detalhe em roxo */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.toast.success { border-left-color: #00b894; }
+.toast.error { border-left-color: #d63031; }
+</style>
+                <div id="status-envio" class="status-msg"></div>
+            </div>
+        </section>
+
+        <aside class="info-section">
+            <div class="info-card">
+                <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-text">
+                    <h3>Telefone / WhatsApp</h3>
+                    <p>(91) 98888-7777</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                <div class="info-text">
+                    <h3>E-mail Oficial</h3>
+                    <p>contato@pintorveloz.com.br</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-text">
+                    <h3>Nosso Endereço</h3>
+                    <p>Benevides, Pará - Brasil</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <section class="mapa-wrapper">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127637.35249537233!2d-48.330815!3d-1.361021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a4609386377755%3A0xc3f982855f75e7a8!2sBenevides%2C%20PA!5e0!3m2!1spt-BR!2sbr!4v1710000000000" 
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </section>
+</main>
+
+  <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo white">TAPON<span>.</span></div>
+                    <p>Soluções inteligentes em tampas plásticas para diversos segmentos industriais.</p>
+                    <div class="social-links">
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/produtos/index.html">Nossos Produtos</a></li>
+                        <li><a href="/contato/index.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone"></i> (91) 98028-3759</p>
+                    <p><i class="fas fa-envelope"></i> Tapon@taponcorona.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pará - Brasil</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tapon. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+        
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="/produtos/ANIMACAO.JS"></script>
+
+    <script src="/script.js"></script>
+    <script src="/contato/contato.js"></script>
+    
+</body>
+</html>

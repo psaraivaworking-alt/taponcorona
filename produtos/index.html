@@ -11,13 +11,36 @@
 <body>
 <header id="header">
     <nav class="navbar">
-        <div class="logo">TAPON<span>.</span></div>
+       <div class="logo">
+  <img src="
+  https://i.postimg.cc/phhW7sW-z/Marca-Tapon.png
+  " alt="Tintas Veloz">
+  <style>
+   
+
+.logo {
+  height: 60px; /* altura do header */
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 70%; /* proporcional ao header */
+}
+
+
+
+
+
+  </style>
+</div>
         
         <ul class="nav-links" id="navLinks">
             <li><a href="/index.html" >Home</a></li>
+           <li><a href="/A-Tapon/index.html">A Tapon</a></li>
             <li><a href="/produtos/index.html" class="active">Produtos</a></li>
-            <li><a href="qualidade.html">Qualidade</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="/qualidade/index.html">Qualidade</a></li>
+            <li><a href="/contato/index.html">Contato</a></li>
         </ul>
 
         <button class="hamburger" id="hamburger">
@@ -28,6 +51,7 @@
 
 <section class="none"></section>
 <main>
+    
     <section class="page-header">
         <div class="container">
             <h1>Nossa Linha de Produtos</h1>
@@ -43,18 +67,18 @@
                         <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa 36mm">
                     </div>
                     <div class="product-basic-info">
-                        <h3>TAMPA BAIXA SEM VEDANTE 28MM.</h3>
-                        <p>O padrão ideal para vedação de tintas e vernizes.</p>
+                        <h3>Tampa plástica de 32 mm.</h3>
+                        <p>Garante vedação e segurança no envase de produtos químicos.</p>
                         <button class="btn-flip" onclick="flipCard('card1')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
                     </div>
                 </div>
                 <div class="card-face card-back">
                     <h3>Especificações Técnicas</h3>
                     <ul>
-                        <li><strong>Material:</strong> Polipropileno (PP)</li>
+                        <li><strong>Material:</strong> Polipropileno (PP) com batoque interno em polietileno de baixa densidade (PEBD)</li>
                         <li><strong>Diâmetro:</strong> 36mm</li>
                         <li><strong>Vedação:</strong> Hermética com batedor</li>
-                        <li><strong>Aplicação:</strong> Latas metálicas e plásticas</li>
+                        <li><strong>Aplicação:</strong> Àgua sanitária e produtos de limepza em geral </li>
                     </ul>
                     <p>Garantia de torque e segurança no transporte.</p>
                     <button class="btn-flip back" onclick="flipCard('card1')">Voltar <i class="fas fa-arrow-left"></i></button>
@@ -69,17 +93,18 @@
                         <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa com Lacre" style="filter: hue-rotate(90deg);">
                     </div>
                     <div class="product-basic-info">
-                        <h3>TTAMPA BAIXA COM VEDANTE 28MM</h3>
-                        <p>Segurança total contra violação do seu produto.</p>
+                        <h3>Tampa CSD 28 mm</h3>
+                        <p>(Carbonated Soft Drink)</p>
                         <button class="btn-flip" onclick="flipCard('card2')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
                     </div>
                 </div>
                 <div class="card-face card-back">
-                    <h3>Segurança Reforçada</h3>
+                    <h3>Especificações técnicas:</h3>
                     <ul>
-                        <li><strong>Lacre:</strong> Sistema de anel rompível</li>
-                        <li><strong>Cores:</strong> Personalização via sistema tintométrico</li>
-                        <li><strong>Resistência:</strong> Alta resistência a solventes</li>
+                      <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
+                        <li><strong>Diâmetro:</strong> 28mm</li>
+                        <li><strong>Vedação:</strong>  interna: Disco de Polietileno (PE) ou liner específico para alta pressão</li>
+                        <li><strong>Aplicação:</strong> Bebidas carbonatadas (alta pressão interna) </li>
                     </ul>
                     <button class="btn-flip back" onclick="flipCard('card2')">Voltar <i class="fas fa-arrow-left"></i></button>
                 </div>
@@ -94,17 +119,19 @@
                         <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
                     </div>
                     <div class="product-basic-info">
-                        <h3>TAMPA BAIXA SEM VEDANTE 28MM REFORÇADA.</h3>
-                        <p>Acabamento superior para marcas de alto valor.</p>
+                        <h3>Tampa 28 mm Leve</h3>
+                        <p>Indicada para água mineral sem gás.</p>
                         <button class="btn-flip" onclick="flipCard('card3')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
                     </div>
                 </div>
                 <div class="card-face card-back">
-                    <h3>Acabamento Premium</h3>
-                    <ul>
-                        <li><strong>Estética:</strong> Brilho intenso e sem rebarbas</li>
-                        <li><strong>Precisão:</strong> Testada em laboratório próprio</li>
-                        <li><strong>Volume:</strong> Pronta entrega para grandes lotes</li>
+                    <h3>Especificações técnicas:</h3>
+                  <ul>
+                      <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
+                        <li><strong>Diâmetro:</strong> 28mm</li>
+                        <li><strong>Vedação:</strong>  interna: Disco de Polietileno (PE)</li>
+                        <li><strong>Aplicação:</strong>  Água sem gás </li>
+                         <li><strong>Peso:</strong> 1,6 g </li>
                     </ul>
                     <button class="btn-flip back" onclick="flipCard('card3')">Voltar <i class="fas fa-arrow-left"></i></button>
                 </div>
@@ -118,17 +145,19 @@
                         <img src="https://png.pngtree.com/png-vector/20240827/ourmid/pngtree-blue-plastic-bottle-cap-png-image_13644643.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
                     </div>
                     <div class="product-basic-info">
-                        <h3>TAMPA COM BATOQUE PARA ÁGUA SANITÁRIA</h3>
-                        <p>Acabamento superior para marcas de alto valor.</p>
+                        <h3>Tampa Água Mineral 28mm</h3>
+                        <p>Tampa plástica baixa sem vedante não carbonatada..</p>
                         <button class="btn-flip" onclick="flipCard('card4')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
                     </div>
                 </div>
                 <div class="card-face card-back">
-                    <h3>Acabamento Premium</h3>
-                    <ul>
-                        <li><strong>Estética:</strong> Brilho intenso e sem rebarbas</li>
-                        <li><strong>Precisão:</strong> Testada em laboratório próprio</li>
-                        <li><strong>Volume:</strong> Pronta entrega para grandes lotes</li>
+                    <h3>Especificações técnicas:</h3>
+                     <ul>
+                      <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
+                        <li><strong>Diâmetro:</strong> 28mm</li>
+                        <li><strong>Vedação:</strong>  interna: Disco de Polietileno (PE)</li>
+                        <li><strong>Aplicação:</strong>  Água sem gás </li>
+                         <li><strong>Peso:</strong> 2,0 g </li>
                     </ul>
                     <button class="btn-flip back" onclick="flipCard('card4')">Voltar <i class="fas fa-arrow-left"></i></button>
                 </div>
