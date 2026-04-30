@@ -10,9 +10,12 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
+
+
 body { background: var(--white); color: var(--text-dark); line-height: 1.6; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; 
+z-index: 1;}
 
 /* NAVBAR */
 /* --- CONFIGURAÇÕES DO HEADER --- */
@@ -43,7 +46,9 @@ header.scrolled {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
+    height: 80px;
 }
+
 
 .logo {
     font-size: 1.8rem;

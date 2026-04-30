@@ -56,6 +56,6 @@ form.addEventListener('submit', e => {
     })
     .finally(() => {
         btnEnviar.disabled = false;
-        btnTexto.innerText = 'Vai para Google Sheets';
+        btnTexto.innerText = 'Enviar outra mensagem';
     });
 });
