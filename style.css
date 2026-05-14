@@ -260,3 +260,5 @@ header.scrolled .nav-links a {
 /* ANIMACAO SCROLL */
 .scroll-anim { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
 .scroll-anim.active { opacity: 1; transform: translateY(0); }
+
+
