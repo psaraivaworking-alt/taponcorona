@@ -49,10 +49,11 @@
     </nav>
 </header>
 
-
 <section class="hero-video">
-    <div class="video-wrapper">
+    <div class="video-wrapper" id="heroVideoContainer">
+        <!-- O MP4 fica aqui por padrão (Desktop) -->
         <video 
+            id="desktopVideo"
             autoplay 
             muted 
             loop 
@@ -60,13 +61,10 @@
             preload="auto" 
             class="video-bg"
             poster="https://i.postimg.cc/6prTb8z8/Whats-App-Image-2026-04-09-at-14-02-46.jpg">
-            
             <source src="YTDown_YouTube_Tapon_Media_fB3nQ1G9-AM_001_1080p.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
         </video>
         <div class="video-overlay"></div>
     </div>
-    <!-- Restante do conteúdo -->
 
     <div class="hero-content container">
         <h1>Tecnologia que <br><span>Protege sua Marca.</span></h1>
@@ -74,6 +72,64 @@
         <a href="/produtos/index.html" class="btn-main">Conheça Nossos Produtos</a>
     </div>
 </section>
+
+<style>
+/* Garante que o vídeo ou iframe ocupem todo o espaço */
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-bg, .video-bg-iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Ajuste específico para o YouTube preencher a tela no Mobile */
+@media (max-width: 768px) {
+    .video-bg-iframe {
+        width: 300vw; /* Aumentado para evitar faixas pretas na vertical */
+        height: 100vh;
+        margin-left: -100vw; /* Centraliza o corte */
+    }
+}
+</style>
+
+<script>
+function handleHeroResponsiveVideo() {
+    const container = document.getElementById('heroVideoContainer');
+    const isMobile = window.innerWidth <= 768;
+    const videoID = "fB3nQ1G9-AM"; // ID do seu vídeo no YouTube
+
+    if (isMobile) {
+        // Se for Mobile, limpa o container e coloca o YouTube em loop
+        container.innerHTML = `
+            <iframe 
+                src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                class="video-bg-iframe">
+            </iframe>
+            <div class="video-overlay"></div>`;
+    }
+    // No PC, o HTML já carrega o MP4 nativamente, então não precisamos fazer nada.
+}
+
+// Executa ao carregar a página
+window.addEventListener('load', handleHeroResponsiveVideo);
+
+// Opcional: Ajusta se o usuário girar o celular
+window.addEventListener('orientationchange', () => {
+    setTimeout(handleHeroResponsiveVideo, 200);
+});
+</script>
     <main>
         <section class="hero">
             <div class="container grid-hero">
