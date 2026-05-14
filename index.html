@@ -50,13 +50,11 @@
 </header>
 <section class="hero-video">
     <div class="video-wrapper">
-        <iframe 
-            src="/YTDown_YouTube_Tapon_Media_fB3nQ1G9-AM_001_1080p.mp4"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            class="video-bg-iframe">
-        </iframe>
+        <!-- O segredo está no 'playsinline' e 'muted' para funcionar no celular -->
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="/YTDown_YouTube_Tapon_Media_fB3nQ1G9-AM_001_1080p.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
         <div class="video-overlay"></div>
     </div>
 
