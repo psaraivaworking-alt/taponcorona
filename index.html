@@ -26,26 +26,28 @@
             height: 100%;
             overflow: hidden;
             z-index: -1;
-            background-color: #000; /* Fundo preto caso o vídeo demore */
+            background-color: #000;
         }
-        .video-bg, .video-bg-iframe {
+        .video-bg {
             width: 100%;
             height: 100%;
             object-fit: cover;
             pointer-events: none;
         }
-        @media (max-width: 768px) {
-            /* Ajuste para cobrir a tela sem barras pretas no mobile */
-            .video-bg-iframe {
-                width: 300vw;
-                height: 100vh;
-                margin-left: -100vw;
-            }
-        }
         .logofooter img {
             height: 80px;
             width: auto;
             display: block;
+        }
+        /* Overlay para garantir contraste do texto */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
     </style>
 </head>
@@ -71,15 +73,15 @@
 
 <section class="hero-video">
     <div class="video-wrapper" id="heroVideoContainer">
-        <!-- O Vídeo Desktop carrega por padrão -->
-        <video id="desktopVideo" autoplay muted loop playsinline preload="auto" class="video-bg"
+        <!-- Usar a tag video nativa garante autoplay e loop no mobile -->
+        <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" class="video-bg"
             poster="https://i.postimg.cc/6prTb8z8/Whats-App-Image-2026-04-09-at-14-02-46.jpg">
             <source src="YTDown_YouTube_Tapon_Media_fB3nQ1G9-AM_001_1080p.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     </div>
 
-    <div class="hero-content container">
+    <div class="hero-content container" style="position: relative; z-index: 2;">
         <h1>Tecnologia que <br><span>Protege sua Marca.</span></h1>
         <p>Soluções industriais em tampas com o mais alto padrão<br>de vedação e acabamento.</p>
         <a href="/produtos/index.html" class="btn-main">Conheça Nossos Produtos</a>
@@ -165,35 +167,16 @@
 </footer>
 
 <script>
-    function handleHeroResponsiveVideo() {
-        const container = document.getElementById('heroVideoContainer');
-        const isMobile = window.innerWidth <= 768;
-        const videoID = "fB3nQ1G9-AM"; 
-
-        if (isMobile) {
-            // Se já for iframe, não faz nada
-            if (container.querySelector('iframe')) return;
-
-            // Parâmetros críticos: autoplay=1, mute=1, playlist=ID (para o loop), playsinline=1
-            container.innerHTML = `
-                <iframe 
-                    class="video-bg-iframe"
-                    src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media; picture-in-picture" 
-                    allowfullscreen
-                    style="pointer-events: none;">
-                </iframe>
-                <div class="video-overlay"></div>`;
-        }
-    }
-
-    // Executa ao carregar
-    window.addEventListener('load', handleHeroResponsiveVideo);
-    
-    // Executa ao girar o celular ou redimensionar
-    window.addEventListener('resize', () => {
-        setTimeout(handleHeroResponsiveVideo, 300);
+    // Forçar o play no mobile se o navegador bloquear inicialmente
+    window.addEventListener('load', function() {
+        var video = document.getElementById('heroVideo');
+        video.play().catch(function(error) {
+            console.log("Autoplay bloqueado. Tentando novamente no primeiro clique.");
+            // Tenta tocar o vídeo quando o usuário interagir com a página se falhar
+            document.body.addEventListener('click', function() {
+                video.play();
+            }, {once: true});
+        });
     });
 </script>
 <script src="script.js"></script>
