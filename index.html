@@ -26,6 +26,7 @@
             height: 100%;
             overflow: hidden;
             z-index: -1;
+            background-color: #000; /* Fundo preto caso o vídeo demore */
         }
         .video-bg, .video-bg-iframe {
             width: 100%;
@@ -34,6 +35,7 @@
             pointer-events: none;
         }
         @media (max-width: 768px) {
+            /* Ajuste para cobrir a tela sem barras pretas no mobile */
             .video-bg-iframe {
                 width: 300vw;
                 height: 100vh;
@@ -69,6 +71,7 @@
 
 <section class="hero-video">
     <div class="video-wrapper" id="heroVideoContainer">
+        <!-- O Vídeo Desktop carrega por padrão -->
         <video id="desktopVideo" autoplay muted loop playsinline preload="auto" class="video-bg"
             poster="https://i.postimg.cc/6prTb8z8/Whats-App-Image-2026-04-09-at-14-02-46.jpg">
             <source src="YTDown_YouTube_Tapon_Media_fB3nQ1G9-AM_001_1080p.mp4" type="video/mp4">
@@ -84,7 +87,6 @@
 </section>
 
 <main>
-    <!-- Seção Sobre / Apresentação -->
     <section class="hero">
         <div class="container grid-hero">
             <div class="hero-text scroll-anim">
@@ -109,7 +111,6 @@
         </div>
     </section>
 
-    <!-- Pilares -->
     <section class="pillars">
         <div class="container">
             <div class="pilar-grid">
@@ -164,31 +165,35 @@
 </footer>
 
 <script>
-    // Função unificada para gerenciar o vídeo responsivo
-   function handleHeroResponsiveVideo() {
-    const container = document.getElementById('heroVideoContainer');
-    const isMobile = window.innerWidth <= 768;
-    const videoID = "fB3nQ1G9-AM"; 
+    function handleHeroResponsiveVideo() {
+        const container = document.getElementById('heroVideoContainer');
+        const isMobile = window.innerWidth <= 768;
+        const videoID = "fB3nQ1G9-AM"; 
 
-    if (isMobile) {
-        // Verificamos se já existe um iframe para não recarregar sem necessidade
-        if (container.querySelector('iframe')) return;
+        if (isMobile) {
+            // Se já for iframe, não faz nada
+            if (container.querySelector('iframe')) return;
 
-        container.innerHTML = `
-            <iframe 
-                src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                allowfullscreen
-                class="video-bg-iframe"
-                style="pointer-events: none;">
-            </iframe>
-            <div class="video-overlay"></div>`;
+            // Parâmetros críticos: autoplay=1, mute=1, playlist=ID (para o loop), playsinline=1
+            container.innerHTML = `
+                <iframe 
+                    class="video-bg-iframe"
+                    src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media; picture-in-picture" 
+                    allowfullscreen
+                    style="pointer-events: none;">
+                </iframe>
+                <div class="video-overlay"></div>`;
+        }
     }
-}
+
+    // Executa ao carregar
     window.addEventListener('load', handleHeroResponsiveVideo);
-    window.addEventListener('orientationchange', () => {
-        setTimeout(handleHeroResponsiveVideo, 200);
+    
+    // Executa ao girar o celular ou redimensionar
+    window.addEventListener('resize', () => {
+        setTimeout(handleHeroResponsiveVideo, 300);
     });
 </script>
 <script src="script.js"></script>
