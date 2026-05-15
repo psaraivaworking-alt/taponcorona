@@ -50,19 +50,10 @@
 </header>
 <section class="hero-video">
     <div class="video-wrapper">
-        <!-- VÍDEO DO YOUTUBE: Aparece apenas no Mobile -->
-        <iframe 
-            src="https://www.youtube.com/embed/fB3nQ1G9-AM?autoplay=1&mute=1&loop=1&playlist=fB3nQ1G9-AM"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            class="video-bg-iframe only-mobile">
-        </iframe>
-
-        <!-- VÍDEO MP4 LOCAL: Aparece apenas no Desktop -->
+        <!-- Agora este único vídeo atende PC e Celular -->
         <!-- Substitua 'seu-video.mp4' pelo caminho correto do seu arquivo -->
-        <video autoplay loop muted playsinline class="video-bg-local only-desktop">
-            <source src="/YTDown_YouTube_Tapon_Media_fB3nQ1G9-AM_001_1080p.mp4" type="video/mp4">
+        <video autoplay loop muted playsinline class="video-bg-local">
+            <source src="seu-video.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
 
