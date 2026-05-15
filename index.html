@@ -7,34 +7,53 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="https://i.postimg.cc/g0nTbWKj/Design-sem-nome-(10).png">
+    <style>
+        .logo {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+        .logo img {
+            height: 70%;
+        }
+        /* Estilos do Vídeo Hero */
+        .video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-bg, .video-bg-iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .video-bg-iframe {
+                width: 300vw;
+                height: 100vh;
+                margin-left: -100vw;
+            }
+        }
+        .logofooter img {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
+
 <header id="header">
     <nav class="navbar">
-       <div class="logo">
-  <img src="
-  https://i.postimg.cc/sDZGtZpM/Marca-Tapon-Hoirizontal-APROVADA-(1).png
-  " alt="Logo Tapon">
-  <style>
-   
-
-.logo {
-  height: 140px; /* altura do header */
-  display: flex;
-  align-items: center;
-  z-index: 2;
-}
-
-.logo img {
-  height: 70%; /* proporcional ao header */
-}
-
-
-
-   
-  </style>
-</div>
-        
+        <div class="logo">
+            <img src="https://i.postimg.cc/sDZGtZpM/Marca-Tapon-Hoirizontal-APROVADA-(1).png" alt="Logo Tapon">
+        </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="/A-Tapon/index.html">A Tapon</a></li>
@@ -42,7 +61,6 @@
             <li><a href="/qualidade/index.html">Qualidade</a></li>
             <li><a href="/contato/index.html">Contato</a></li>
         </ul>
-
         <button class="hamburger" id="hamburger">
             <span></span><span></span><span></span>
         </button>
@@ -51,15 +69,7 @@
 
 <section class="hero-video">
     <div class="video-wrapper" id="heroVideoContainer">
-        <!-- O MP4 fica aqui por padrão (Desktop) -->
-        <video 
-            id="desktopVideo"
-            autoplay 
-            muted 
-            loop 
-            playsinline 
-            preload="auto" 
-            class="video-bg"
+        <video id="desktopVideo" autoplay muted loop playsinline preload="auto" class="video-bg"
             poster="https://i.postimg.cc/6prTb8z8/Whats-App-Image-2026-04-09-at-14-02-46.jpg">
             <source src="YTDown_YouTube_Tapon_Media_fB3nQ1G9-AM_001_1080p.mp4" type="video/mp4">
         </video>
@@ -73,155 +83,110 @@
     </div>
 </section>
 
-<style>
-/* Garante que o vídeo ou iframe ocupem todo o espaço */
-.video-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.video-bg, .video-bg-iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
-}
-
-/* Ajuste específico para o YouTube preencher a tela no Mobile */
-@media (max-width: 768px) {
-    .video-bg-iframe {
-        width: 300vw; /* Aumentado para evitar faixas pretas na vertical */
-        height: 100vh;
-        margin-left: -100vw; /* Centraliza o corte */
-    }
-}
-</style>
-
-<script>
-function handleHeroResponsiveVideo() {
-    const container = document.getElementById('heroVideoContainer');
-    const isMobile = window.innerWidth <= 768;
-    const videoID = "fB3nQ1G9-AM"; // ID do seu vídeo no YouTube
-
-    if (isMobile) {
-        // Se for Mobile, limpa o container e coloca o YouTube em loop
-        container.innerHTML = `
-            <iframe 
-                src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                class="video-bg-iframe">
-            </iframe>
-            <div class="video-overlay"></div>`;
-    }
-    // No PC, o HTML já carrega o MP4 nativamente, então não precisamos fazer nada.
-}
-
-// Executa ao carregar a página
-window.addEventListener('load', handleHeroResponsiveVideo);
-
-// Opcional: Ajusta se o usuário girar o celular
-window.addEventListener('orientationchange', () => {
-    setTimeout(handleHeroResponsiveVideo, 200);
-});
-</script>
-    <main>
-        <section class="hero">
-            <div class="container grid-hero">
-                <div class="hero-text scroll-anim">
-                    <span class="line-tag">Mais de 10 anos no mercado</span>
-                    <h1>Tecnologia de Fechamento com <span>Precisão Industrial.</span></h1>
-                    <p>A Tapon é referência na fabricação de tampas<br>no estado do Pará, unindo alta performance produtiva<br>a um rigoroso controle de qualidade<br>para o mercado nacional.</p>
-                    <div class="hero-actions">
-                        <a href="/produtos/index.html" class="btn-main">Conheça nossa Linha</a>
-                        <a href="/qualidade/index.html" class="btn-link">Padrões de Qualidade <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image scroll-anim">
-                    <div class="image-stack">
-                        <img src="https://www.youtube.com/embed/fB3nQ1G9-AM?autoplay=1&mute=1&loop=1&playlist=fB3nQ1G9-AM&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1" alt="Produção Industrial" class="img-main">
-                        <div class="img-overlay-card">
-                            <i class="fas fa-check-double"></i>
-                            <span>Certificação de Qualidade Total</span>
-                        </div>
-                    </div>
+<main>
+    <!-- Seção Sobre / Apresentação -->
+    <section class="hero">
+        <div class="container grid-hero">
+            <div class="hero-text scroll-anim">
+                <span class="line-tag">Mais de 10 anos no mercado</span>
+                <h1>Tecnologia de Fechamento com <span>Precisão Industrial.</span></h1>
+                <p>A Tapon é referência na fabricação de tampas<br>no estado do Pará, unindo alta performance produtiva<br>a um rigoroso controle de qualidade para o mercado nacional.</p>
+                <div class="hero-actions">
+                    <a href="/produtos/index.html" class="btn-main">Conheça nossa Linha</a>
+                    <a href="/qualidade/index.html" class="btn-link">Padrões de Qualidade <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-        </section>
-<section class="pillars">
+            
+            <div class="hero-image scroll-anim">
+                <div class="image-stack">
+                    <img src="https://i.postimg.cc/6prTb8z8/Whats-App-Image-2026-04-09-at-14-02-46.jpg" alt="Produção Industrial" class="img-main">
+                    <div class="img-overlay-card">
+                        <i class="fas fa-check-double"></i>
+                        <span>Certificação de Qualidade Total</span>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <!-- Pilares -->
+    <section class="pillars">
+        <div class="container">
+            <div class="pilar-grid">
+                <div class="pilar-card scroll-anim">
+                    <i class="fas fa-industry"></i>
+                    <h3>Capacidade Produtiva</h3>
+                    <p>Estrutura preparada para atender grandes demandas com agilidade.</p>
+                </div>
+                <div class="pilar-card scroll-anim">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Controle de Qualidade</h3>
+                    <p>Precisão e padronização em cada etapa do processo.</p>
+                </div>
+                <div class="pilar-card scroll-anim">
+                    <i class="fas fa-truck-loading"></i>
+                    <h3>Logística Eficiente</h3>
+                    <p>Distribuição estratégica para garantir prazos em todo o território.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
     <div class="container">
-        <div class="pilar-grid">
-            <div class="pilar-card scroll-anim">
-                <i class="fas fa-industry"></i>
-                <h3>Capacidade Produtiva</h3>
-                <p>Estrutura preparada para atender grandes demandas com agilidade.</p>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logofooter white">
+                    <img src="https://i.postimg.cc/LsyWgsNW/Design-sem-nome-(9).png" alt="Logofooter Tapon">
+                </div>
+                <p>Soluções inteligentes em tampas plásticas para diversos segmentos industriais.</p>
             </div>
-
-            <div class="pilar-card scroll-anim">
-                <i class="fas fa-cogs"></i>
-                <h3>Controle de Qualidade</h3>
-                <p>Precisão e padronização em cada etapa do processo.</p>
+            <div class="footer-nav">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/produtos/index.html">Nossos Produtos</a></li>
+                    <li><a href="/contato/index.html">Contato</a></li>
+                </ul>
             </div>
-
-            <div class="pilar-card scroll-anim">
-                <i class="fas fa-truck-loading"></i>
-                <h3>Logística Eficiente</h3>
-                <p>Distribuição estratégica para garantir prazos em todo o território.</p>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> (91) 98028-3759</p>
+                <p><i class="fas fa-envelope"></i> Tapon@taponcorona.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Pará - Brasil</p>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tapon. Todos os direitos reservados.</p>
         </div>
     </div>
-</section>
-    </main>
+</footer>
 
-  <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
+<script>
+    // Função unificada para gerenciar o vídeo responsivo
+    function handleHeroResponsiveVideo() {
+        const container = document.getElementById('heroVideoContainer');
+        const isMobile = window.innerWidth <= 768;
+        const videoID = "fB3nQ1G9-AM"; 
 
-                 <div class="logofooter white">
-  <img class="logofooter" src="https://i.postimg.cc/LsyWgsNW/Design-sem-nome-(9).png" alt="Logofooter Tapon">
-</div>
-<style>
-.logofooter img {
-  height: 80px; /* ajuste conforme necessário */
-  width: auto;
-  display: block;
-}
-    
-</style>
-                    <p>Soluções inteligentes em tampas plásticas para diversos segmentos industriais.</p>
-                    <div class="social-links">
-                    </div>
-                </div>
-                <div class="footer-nav">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/produtos/index.html">Nossos Produtos</a></li>
-                        <li><a href="/contato/index.html">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-phone"></i> (91) 98028-3759</p>
-                    <p><i class="fas fa-envelope"></i> Tapon@taponcorona.com.br</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Pará - Brasil</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tapon. Todos os direitos reservados.</p>
-                <div class="footer-legal">
-        
-                </div>
-            </div>
-        </div>
-    </footer>
+        if (isMobile) {
+            container.innerHTML = `
+                <iframe 
+                    src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    class="video-bg-iframe">
+                </iframe>
+                <div class="video-overlay"></div>`;
+        }
+    }
 
-    <script src="script.js"></script>
+    window.addEventListener('load', handleHeroResponsiveVideo);
+    window.addEventListener('orientationchange', () => {
+        setTimeout(handleHeroResponsiveVideo, 200);
+    });
+</script>
+<script src="script.js"></script>
 </body>
 </html>
