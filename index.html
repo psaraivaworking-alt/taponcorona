@@ -165,23 +165,27 @@
 
 <script>
     // Função unificada para gerenciar o vídeo responsivo
-    function handleHeroResponsiveVideo() {
-        const container = document.getElementById('heroVideoContainer');
-        const isMobile = window.innerWidth <= 768;
-        const videoID = "fB3nQ1G9-AM"; 
+   function handleHeroResponsiveVideo() {
+    const container = document.getElementById('heroVideoContainer');
+    const isMobile = window.innerWidth <= 768;
+    const videoID = "fB3nQ1G9-AM"; 
 
-        if (isMobile) {
-            container.innerHTML = `
-                <iframe 
-                    src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media" 
-                    class="video-bg-iframe">
-                </iframe>
-                <div class="video-overlay"></div>`;
-        }
+    if (isMobile) {
+        // Verificamos se já existe um iframe para não recarregar sem necessidade
+        if (container.querySelector('iframe')) return;
+
+        container.innerHTML = `
+            <iframe 
+                src="https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&playsinline=1" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen
+                class="video-bg-iframe"
+                style="pointer-events: none;">
+            </iframe>
+            <div class="video-overlay"></div>`;
     }
-
+}
     window.addEventListener('load', handleHeroResponsiveVideo);
     window.addEventListener('orientationchange', () => {
         setTimeout(handleHeroResponsiveVideo, 200);
