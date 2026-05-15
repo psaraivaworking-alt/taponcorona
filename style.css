@@ -103,36 +103,16 @@ header.scrolled .nav-links a {
     z-index: -1;
 }
 
-/* --- ESTILIZAÇÃO DO IFRAME (YOUTUBE - MOBILE) --- */
-.video-bg-iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    object-fit: cover;
-}
-
-/* Ajustes de proporção para o iframe do YouTube */
-@media (min-aspect-ratio: 16/9) {
-    .video-bg-iframe { height: 56.25vw; }
-}
-@media (max-aspect-ratio: 16/9) {
-    .video-bg-iframe { width: 177.78vh; }
-}
-
-/* --- ESTILIZAÇÃO DO VÍDEO LOCAL (MP4 - DESKTOP) --- */
+/* --- ESTILIZAÇÃO DO VÍDEO LOCAL (MP4 para todos os dispositivos) --- */
 .video-bg-local {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que o vídeo cubra toda a área sem distorcer */
-    pointer-events: none;
-    filter: blur(4px) brightness(0.7); /* Mantive o efeito suave que você usou no seu CSS antigo */
+    object-fit: cover; /* Faz o vídeo cobrir a tela inteira (PC ou Celular) sem distorcer */
+    pointer-events: none; /* Impede o usuário de pausar clicando na tela */
+    filter: blur(4px) brightness(0.7); /* Mantém o efeito suave no vídeo */
 }
 
 .video-overlay {
@@ -140,22 +120,6 @@ header.scrolled .nav-links a {
     top: 0; left: 0;
     width: 100%; height: 100%;
     background: linear-gradient(135deg, rgba(78, 115, 4, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
-}
-
-/* --- LÓGICA DE EXIBIÇÃO (MEDIA QUERIES) --- */
-
-/* Telas menores (Mobile e Tablets) */
-@media (max-width: 992px) {
-    .only-desktop {
-        display: none !important;
-    }
-}
-
-/* Telas maiores (Computadores/Desktop) */
-@media (min-width: 993px) {
-    .only-mobile {
-        display: none !important;
-    }
 }
 .hero-content h1 {
     font-size: 4rem;
