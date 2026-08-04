@@ -34,11 +34,11 @@
     background: var(--white);
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     border: 1px solid #eee;
-    padding: 30px;
+    padding: 0px 30px 30px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start; 
     text-align: center;
 }
 
@@ -51,7 +51,11 @@
     align-items: flex-start;
 }
 
-.card-back h3 { color: var(--dark-green); margin-bottom: 20px; margin-top: 25px; }
+.card-back h3 { 
+    color: var(--dark-green); 
+    margin-bottom: 20px; 
+    margin-top: 25px; 
+}
 
 .card-back ul {
     list-style: none;
@@ -66,28 +70,9 @@
     padding-bottom: 5px;
 }
 
-/* Conteúdo da Frente */
-/* Ajuste na face do card para não espalhar tanto os itens */
-.card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    background: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
-    padding: 0px 30px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Alterado de space-between para flex-start para controlar manualmente */
-    justify-content: flex-start; 
-    text-align: center;
-}
-
 /* Reduzindo a altura do container da imagem e a margem inferior */
 .product-img {
+    position: relative; /* Serve de referência para o posicionamento da máscara */
     width: 250px;
     height: 250px; /* define área fixa */
     display: flex;
@@ -95,22 +80,35 @@
     justify-content: center;
     margin-bottom: 10px;
     margin-top: 0px;
-      
 }
 
 .product-img img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* mantém proporção sem cortar */
-           object-fit: contain;
-       animation: rgbShift 15s linear infinite; /* mais lento */
+    animation: rgbShift 15s linear infinite; /* mais lento */
     filter: hue-rotate(0deg) saturate(1.1) brightness(1.03);
+}
+
+/* ESTILO DA IMAGEM EXTRA (MÁSCARA SOBREPOSTA SEM ANIMAÇÃO) */
+.product-img img.extra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2; /* Fica por cima da imagem animada */
+    animation: none !important; /* Desativa animação */
+    filter: none !important; /* Desativa mudança de cor */
+    pointer-events: none;
 }
 
 @keyframes rgbShift {
     0%   { filter: hue-rotate(0deg) saturate(1.2) brightness(1.05); }
     100% { filter: hue-rotate(360deg) saturate(1.2) brightness(1.05); }
 }
+
 /* Garante que o título não tenha margem superior extra */
 .product-basic-info h3 {
     color: var(--dark-green);
@@ -119,7 +117,7 @@
     margin-bottom: 5px;
 }
 
-/* Adiciona um espaço automático apenas antes do botão para empurrá-lo para o fim do card */
+/* Estrutura das informações básicas na frente do card */
 .product-basic-info {
     display: flex;
     flex-direction: column;
@@ -157,8 +155,8 @@
     margin: 0;
 }
 
-.none{
-    background-color: #7dba00;;
+.none {
+    background-color: #7dba00;
     margin-top: 40px;
     margin-bottom: 150px;
 }

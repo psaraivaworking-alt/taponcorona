@@ -7,39 +7,30 @@
     <link rel="stylesheet" href="/produtos/padrao.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/produtos/produto.css">
-     <link rel="stylesheet" href="/style.css">
-     <link rel="icon" type="image/png" href="https://i.postimg.cc/g0nTbWKj/Design-sem-nome-(10).png">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/g0nTbWKj/Design-sem-nome-(10).png">
 </head>
 <body>
 <header id="header">
     <nav class="navbar">
-       <div class="logo">
-  <img src="
-  https://i.postimg.cc/sDZGtZpM/Marca-Tapon-Hoirizontal-APROVADA-(1).png
-  " alt="Logo Tapon">
-  <style>
-   
-
-.logo {
-  height: 140px; /* altura do header */
-  display: flex;
-  align-items: center;
-  z-index: 2;
-}
-
-.logo img {
-  height: 70%; /* proporcional ao header */
-}
-
-
-
-   
-  </style>
-</div>
+        <div class="logo">
+            <img src="https://i.postimg.cc/sDZGtZpM/Marca-Tapon-Hoirizontal-APROVADA-(1).png" alt="Logo Tapon">
+            <style>
+                .logo {
+                    height: 140px; /* altura do header */
+                    display: flex;
+                    align-items: center;
+                    z-index: 2;
+                }
+                .logo img {
+                    height: 70%; /* proporcional ao header */
+                }
+            </style>
+        </div>
         
         <ul class="nav-links" id="navLinks">
-            <li><a href="/index.html" >Home</a></li>
-           <li><a href="/A-Tapon/index.html">A Tapon</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/A-Tapon/index.html">A Tapon</a></li>
             <li><a href="/produtos/index.html" class="active">Produtos</a></li>
             <li><a href="/qualidade/index.html">Qualidade</a></li>
             <li><a href="/contato/index.html">Contato</a></li>
@@ -53,7 +44,6 @@
 
 <section class="none"></section>
 <main>
-    
     <section class="page-header">
         <div class="container">
             <h1>Nossa Linha de Produtos</h1>
@@ -62,11 +52,14 @@
     </section>
 
     <section class="products-grid container">
+        <!-- CARD 1 -->
         <div class="card-container scroll-anim">
             <div class="product-card" id="card1">
                 <div class="card-face card-front">
                     <div class="product-img">
                         <img src="https://i.postimg.cc/SNKrD0bL/Tampa-com-batoque.png" alt="Tampa 36mm">
+                        <!-- Imagem extra inserida aqui como máscara estática -->
+                        <img class="extra" src="https://i.postimg.cc/pTt13DpT/Chat-GPT-Image-4-de-ago-de-2026-13-55-14-removebg-preview.png" alt="Máscara sobreposta">
                     </div>
                     <div class="product-basic-info">
                         <h3>Tampa plástica de 32 mm.</h3>
@@ -78,7 +71,7 @@
                     <ul>
                         <li><strong>Material:</strong> Polipropileno (PP) com batoque interno em polietileno de baixa densidade (PEBD)</li>
                         <li><strong>Vedação:</strong> Hermética com batedor</li>
-                        <li><strong>Produtos aplicáveis:</strong> Àgua sanitária e produtos de limepza em geral </li>
+                        <li><strong>Produtos aplicáveis:</strong> Água sanitária e produtos de limpeza em geral </li>
                     </ul>
                     <p>Garantia de torque e segurança no transporte.</p>
                     <button class="btn-flip back" onclick="flipCard('card1')">Voltar <i class="fas fa-arrow-left"></i></button>
@@ -86,11 +79,12 @@
             </div>
         </div>
 
+        <!-- CARD 2 -->
         <div class="card-container scroll-anim">
             <div class="product-card" id="card2">
                 <div class="card-face card-front">
                     <div class="product-img">
-                        <img src="https://i.postimg.cc/3xf5wLFK/3.png" alt="Tampa com Lacre" style="filter: hue-rotate(90deg);">
+                        <img src="https://i.postimg.cc/QMBHvTv6/Chat-GPT-Image-4-de-ago-de-2026-14-06-41-removebg-preview.png" alt="Tampa com Lacre" style="filter: hue-rotate(90deg);">
                     </div>
                     <div class="product-basic-info">
                         <h3>Tampa CSD 28 mm</h3>
@@ -101,8 +95,8 @@
                 <div class="card-face card-back">
                     <h3>Especificações técnicas:</h3>
                     <ul>
-                      <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
-                        <li><strong>Vedação:</strong>  interna: Disco de Polietileno (PE) ou liner específico para alta pressão</li>
+                        <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
+                        <li><strong>Vedação:</strong> interna: Disco de Polietileno (PE) para alta pressão</li>
                         <li><strong>Produtos aplicáveis:</strong> Bebidas carbonatadas (alta pressão interna) </li>
                     </ul>
                     <button class="btn-flip back" onclick="flipCard('card2')">Voltar <i class="fas fa-arrow-left"></i></button>
@@ -110,12 +104,12 @@
             </div>
         </div>
 
-        
+        <!-- CARD 3 -->
         <div class="card-container scroll-anim">
             <div class="product-card" id="card3">
                 <div class="card-face card-front">
                     <div class="product-img">
-                        <img src="https://i.postimg.cc/hGV4drM7/1.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
+                        <img src="https://i.postimg.cc/Bv5s6vQ6/2.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
                     </div>
                     <div class="product-basic-info">
                         <h3>Tampa 28 mm 1,6g</h3>
@@ -124,35 +118,36 @@
                 </div>
                 <div class="card-face card-back">
                     <h3>Especificações técnicas:</h3>
-                  <ul>
-                      <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
-                        <li><strong>Vedação:</strong>  interna: Disco de Polietileno (PE)</li>
-                        <li><strong>Produtos aplicáveis:</strong>  Água sem gás </li>
-                         <li><strong>Peso:</strong> 1,6 g </li>
+                    <ul>
+                        <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
+                        <li><strong>Vedação:</strong> interna: Disco de Polietileno (PE)</li>
+                        <li><strong>Produtos aplicáveis:</strong> Água sem gás </li>
+                        <li><strong>Peso:</strong> 1,6 g </li>
                     </ul>
                     <button class="btn-flip back" onclick="flipCard('card3')">Voltar <i class="fas fa-arrow-left"></i></button>
                 </div>
             </div>
         </div>
 
-          <div class="card-container scroll-anim">
+        <!-- CARD 4 -->
+        <div class="card-container scroll-anim">
             <div class="product-card" id="card4">
                 <div class="card-face card-front">
                     <div class="product-img">
-                        <img src="https://i.postimg.cc/Bv5s6vQ6/2.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
+                        <img src="https://i.postimg.cc/hGV4drM7/1.png" alt="Tampa Especial" style="filter: hue-rotate(240deg);">
                     </div>
                     <div class="product-basic-info">
                         <h3>Tampa Água Mineral 28mm 2g</h3>
                         <button class="btn-flip" onclick="flipCard('card4')">Ver detalhes <i class="fas fa-sync-alt"></i></button>
                     </div>
                 </div>
-                <div class="card-face card-back">Produtos aplicáveis
+                <div class="card-face card-back">
                     <h3>Especificações técnicas:</h3>
-                     <ul>
-                      <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
-                        <li><strong>Vedação:</strong>  interna: Disco de Polietileno (PE)</li>
-                        <li><strong>Produtos aplicáveis:</strong>  Água sem gás </li>
-                         <li><strong>Peso:</strong> 2,0 g </li>
+                    <ul>
+                        <li><strong>Material:</strong> Polietileno de Alta Densidade (PEAD)</li>
+                        <li><strong>Vedação:</strong> interna: Disco de Polietileno (PE)</li>
+                        <li><strong>Produtos aplicáveis:</strong> Água sem gás </li>
+                        <li><strong>Peso:</strong> 2,0 g </li>
                     </ul>
                     <button class="btn-flip back" onclick="flipCard('card4')">Voltar <i class="fas fa-arrow-left"></i></button>
                 </div>
@@ -160,53 +155,47 @@
         </div>
     </section>
 </main>
-  <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
 
-                 <div class="logofooter white">
-  <img class="logofooter" src="https://i.postimg.cc/LsyWgsNW/Design-sem-nome-(9).png" alt="Logofooter Tapon">
-</div>
-<style>
-.logofooter img {
-  height: 80px; /* ajuste conforme necessário */
-  width: auto;
-  display: block;
-}
-    
-</style>
-                    <p>Soluções inteligentes em tampas plásticas para diversos segmentos industriais.</p>
-                    <div class="social-links">
-                    </div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logofooter white">
+                    <img class="logofooter" src="https://i.postimg.cc/LsyWgsNW/Design-sem-nome-(9).png" alt="Logofooter Tapon">
                 </div>
-                <div class="footer-nav">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/produtos/index.html">Nossos Produtos</a></li>
-                        <li><a href="/contato/index.html">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-phone"></i> (91) 98028-3759</p>
-                    <p><i class="fas fa-envelope"></i> Tapon@taponcorona.com.br</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Pará - Brasil</p>
-                </div>
+                <style>
+                    .logofooter img {
+                        height: 80px; /* ajuste conforme necessário */
+                        width: auto;
+                        display: block;
+                    }
+                </style>
+                <p>Soluções inteligentes em tampas plásticas para diversos segmentos industriais.</p>
+                <div class="social-links"></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Tapon. Todos os direitos reservados.</p>
-                <div class="footer-legal">
-        
-                </div>
+            <div class="footer-nav">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/produtos/index.html">Nossos Produtos</a></li>
+                    <li><a href="/contato/index.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> (91) 98028-3759</p>
+                <p><i class="fas fa-envelope"></i> Tapon@taponcorona.com.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Pará - Brasil</p>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tapon. Todos os direitos reservados.</p>
+            <div class="footer-legal"></div>
+        </div>
+    </div>
+</footer>
 
 <script src="/produtos/ANIMACAO.JS"></script>
-
-    <script src="/script.js"></script>
-    
+<script src="/script.js"></script>
 </body>
 </html>
