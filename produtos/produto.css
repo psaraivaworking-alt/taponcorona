@@ -30,6 +30,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden; /* Esconde a parte de trás enquanto gira */
+    -webkit-backface-visibility: hidden; /* Suporte para Safari */
     border-radius: 15px;
     background: var(--white);
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -40,6 +41,7 @@
     align-items: center;
     justify-content: flex-start; 
     text-align: center;
+    transform-style: preserve-3d; /* Mantém elementos internos no espaço 3D */
 }
 
 /* Estilo do Verso */
@@ -80,6 +82,7 @@
     justify-content: center;
     margin-bottom: 10px;
     margin-top: 0px;
+    transform-style: preserve-3d; /* IMPORTANTE: Mantém as imagens sobrepostas no eixo 3D */
 }
 
 .product-img img {
@@ -102,6 +105,9 @@
     animation: none !important; /* Desativa animação */
     filter: none !important; /* Desativa mudança de cor */
     pointer-events: none;
+    transform: translateZ(1px); /* IMPORTANTE: Garante a renderização na frente e fixa o giro 3D */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 @keyframes rgbShift {
